@@ -8,6 +8,6 @@ import './styles.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
-        <FirstApp title='Hola' suma = {1+1} />
+        <FirstApp title='Mi titulo' />
     </React.StrictMode>
 )

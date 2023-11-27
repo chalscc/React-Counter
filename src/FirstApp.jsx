@@ -1,15 +1,19 @@
-const newMessage = 123
+import PropTypes from 'prop-types';
 
 
-const FirstApp = ( {title = 'Default', suma} ) => {
+const FirstApp = ( {title, subtitle} ) => {
 
    return (
     <>
         <h1>{ title }</h1>
-        <h1>{ suma }</h1>
-        <p>React is a JavaScript library for building user interfaces.</p>
+        <p>{ subtitle }</p>
     </>
     );
+}
+
+FirstApp.propTypes = {
+    title: PropTypes.string.isRequired,
+    subtitle: PropTypes.string
 }
 
 export default FirstApp;
