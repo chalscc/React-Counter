@@ -16,4 +16,9 @@ FirstApp.propTypes = {
     subtitle: PropTypes.string
 }
 
+FirstApp.defaultProps = {
+    title: 'There is no title',
+    subtitle: 'There is no subtitle'
+}
+
 export default FirstApp;
