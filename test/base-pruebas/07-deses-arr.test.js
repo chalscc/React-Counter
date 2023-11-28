@@ -7,7 +7,6 @@ describe('Pruebas 07-deses-arr', () =>
         {
             const [ letters, numbers ] = retornaArreglo();
 
-            console.log( typeof letters, typeof numbers )
             expect( typeof letters ).toBe( 'string' );
             expect( typeof numbers ).toBe( 'number' );
 
