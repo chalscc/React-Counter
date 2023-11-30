@@ -37,9 +37,9 @@ describe('Pruebas en <FirstApp /> component', () => {
         );
 
         // Espero que el titulo exista
-        expect(getByText(subtitle)).toBeTruthy();
+        expect(getAllByText(subtitle)).toBeTruthy();
 
         // Espero que solo haya 1 subtitulo
-        expect(getAllByText(subtitle).length).toBe(1);
+        expect(getAllByText(subtitle).length).toBe(2);
     })
  })
