@@ -8,8 +8,6 @@ describe('Pruebas en <FirstApp /> component', () => {
 
         const { container } = render(<FirstApp title={ title } />)
 
-        // console.log(container)
-
         expect(container).toMatchSnapshot()
      })
 
@@ -17,12 +15,31 @@ describe('Pruebas en <FirstApp /> component', () => {
 
         const title = 'Hola, soy Carles'
 
-        const { container, getByText } = render(<FirstApp title={ title } />)
+        const { container, getByText, getByTestId } = render(<FirstApp title={ title } />)
 
+        // Espero que el titulo exista
         expect(getByText(title)).toBeTruthy();
 
-        const h1 = container.querySelector('h1');
+        // Espero que el titulo con el id 'test-title' contenga el titulo enviado por props
+        expect(getByTestId('test-title').innerHTML).toContain(title);
+    });
 
-        expect(h1.innerHTML).toContain(title)
+    test('debe de mostrar el subtitulo enviado por props', () =>
+    {
+        const title = 'Hola, soy Carles'
+        const subtitle = 'Soy un subtitulo'
+
+        const { getByText, getAllByText } = render(
+            <FirstApp 
+                title={ title } 
+                subtitle={ subtitle } 
+            />
+        );
+
+        // Espero que el titulo exista
+        expect(getByText(subtitle)).toBeTruthy();
+
+        // Espero que solo haya 1 subtitulo
+        expect(getAllByText(subtitle).length).toBe(1);
     })
  })
